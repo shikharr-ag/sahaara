@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "743121904146",
+    "project_id": "saahara-1",
+    "storage_bucket": "saahara-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743121904146:android:3bfb7d94269f7f938b6ecb",
+        "android_client_info": {
+          "package_name": "com.examp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743121904146-v43a1djugkvod6ae01fkgimc2tvnijpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyS5Dc_KrAeCasJ6j8583A4YMIz1mf7eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743121904146-v43a1djugkvod6ae01fkgimc2tvnijpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743121904146:android:b28ba145b877f26e8b6ecb",
+        "android_client_info": {
+          "package_name": "com.example.sahaara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743121904146-v43a1djugkvod6ae01fkgimc2tvnijpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyS5Dc_KrAeCasJ6j8583A4YMIz1mf7eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743121904146-v43a1djugkvod6ae01fkgimc2tvnijpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
