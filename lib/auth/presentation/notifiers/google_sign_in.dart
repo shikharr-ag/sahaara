@@ -79,8 +79,8 @@ class GoogleSignInNotifier extends Notifier<GoogleLoginState> {
           .signInWithEmailAndPassword(
         // email: 'shikhar@myhealthtick.com',
         //  password: 'shikhar123'
-        email: 'rohit@gmail.com',
-        password: '12345678',
+        email: 'a@b.com',
+        password: '123456',
       )
           .then((creds) async {
         final User? usr = creds.user;

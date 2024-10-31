@@ -6,14 +6,33 @@ import 'package:url_launcher/url_launcher.dart';
 
 class MarkdownText extends StatelessWidget {
   final String markdownData;
+  final bool getPreview;
 
-  const MarkdownText({required this.markdownData});
+  const MarkdownText({required this.markdownData,this.getPreview=false});
 
   @override
   Widget build(BuildContext context) {
     final parsedData = _parseMarkdownWithMood(markdownData);
 
-    return Column(
+    return getPreview ? Column(
+       crossAxisAlignment: CrossAxisAlignment.start,
+       children: 
+        (parsedData['beginning']?['mood'] != null)  ? [
+          Text('Beginning Mood: ${parsedData['beginning']!['mood']}'),
+          const SizedBox(
+            height: 8,
+          ),
+          RichText(
+            text: TextSpan(
+              children:
+                  parsedData['beginning']?['spans'] as List<TextSpan>? ?? [],
+              style: AppColors.theme.textTheme.bodyMedium!
+                  .copyWith(color: Colors.black, fontSize: 16),
+            ),
+          ),
+          SizedBox(height: 10),
+        ] :[Text('Preview Unavailable')],
+    ) : Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (parsedData['beginning']?['mood'] != null) ...[

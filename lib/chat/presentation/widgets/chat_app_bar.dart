@@ -19,33 +19,37 @@ class ChatAppBar extends ConsumerWidget {
         BackButton(
           onPressed: () async {
             if (Navigator.canPop(context)) {
-              await showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: const Text('Pause this Session ?'),
-                    content: const Text(
-                      'Are you sure you want to pause this session? You can resume it at any time.',
-                    ),
-                    actions: [
-                      TextButton(
-                        child: const Text('Cancel'),
-                        onPressed: () => Navigator.of(context).pop(false),
+              if (hideActions)
+                Navigator.of(context).pop();
+              else {
+                await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Pause this Session ?'),
+                      content: const Text(
+                        'Are you sure you want to pause this session? You can resume it at any time.',
                       ),
-                      TextButton(
-                        child: const Text(
-                          'Pause Session',
-                          style: TextStyle(color: Colors.red),
+                      actions: [
+                        TextButton(
+                          child: const Text('Cancel'),
+                          onPressed: () => Navigator.of(context).pop(false),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
+                        TextButton(
+                          child: const Text(
+                            'Pause Session',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop(true);
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
             } else {
               Navigator.of(context)
                   .pushReplacement(Transition(child: MyHomePage(title: '')));

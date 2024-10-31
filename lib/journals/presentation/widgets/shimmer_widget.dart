@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shimmer/flutter_shimmer.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:sahaara/global/sahaara_theme.dart';
+import 'package:sahaara/global/widgets/markdown_text.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sizer/sizer.dart';
 
@@ -71,13 +72,9 @@ class ShimmerContainer extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Text(
-                          _item['journalContent'],
-                          style: AppColors.theme.textTheme.bodyMedium?.copyWith(
-                            fontSize: 14,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 8,
+                        MarkdownText(
+                          markdownData: _item['journalContent'],
+                          getPreview: true,
                         ),
                       ],
               ),

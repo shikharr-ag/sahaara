@@ -53,8 +53,8 @@ class _SessionsScreenState extends State<SessionsScreen>
           'subtitle': subtitle,
           'color': AppColors.calmingGradient[
               Random().nextInt(AppColors.calmingGradient.length - 1)],
-          'height': 40 +
-              (Random().nextInt(40) + 20), // Dynamic height based on content
+          'height': 100 +
+              (Random().nextDouble() * 80), // Dynamic height based on content
         };
       },
     );
@@ -94,8 +94,14 @@ class _SessionsScreenState extends State<SessionsScreen>
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(Transition(child: TextChatScreen(),transitionEffect: TransitionEffect.RIGHT_TO_LEFT,),);
+                    Navigator.of(context).push(
+                      Transition(
+                        child: TextChatScreen(
+                          isViewOnly: true,
+                        ),
+                        transitionEffect: TransitionEffect.RIGHT_TO_LEFT,
+                      ),
+                    );
                     // Navigator.push(
                     //   context,
                     //   MaterialPageRoute(
@@ -107,7 +113,7 @@ class _SessionsScreenState extends State<SessionsScreen>
                   },
                   child: Container(
                     margin: const EdgeInsets.all(8),
-                    height: _items[index]['height'],
+                    height: _items[index]['height'].toDouble(),
                     decoration: BoxDecoration(
                       color: _items[index]['color'],
                       borderRadius: BorderRadius.circular(15),

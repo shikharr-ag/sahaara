@@ -13,13 +13,18 @@ import 'package:sahaara/global/sahaara_theme.dart';
 import 'package:sahaara/global/sizing.dart';
 import 'package:sahaara/package_animate.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:appwrite/appwrite.dart';
 import 'home/presentation/screens/home_screen.dart';
 
 final sizing = Sizing();
 
+
+Client client = Client();
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  client.setProject('67235e43000669db1bca');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
   runApp(const MyApp());
 }
