@@ -43,7 +43,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage>
   @override
   void initState() {
     super.initState();
-    ref.read(myUserNotifier.notifier).updateUsers();
+    // ref.read(myUserNotifier.notifier).updateUsers();
     _fabAnimationController = AnimationController(
       duration: Duration(milliseconds: 500),
       vsync: this,

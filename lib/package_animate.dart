@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sahaara/auth/data/ds/set_my_user.dart';
 import 'package:sahaara/auth/presentation/notifiers/my_user_notifier.dart';
-import 'package:sahaara/auth/presentation/screen/google_sign_in_page.dart';
+import 'package:sahaara/auth/presentation/screen/appwrite_login_page.dart';
 import 'package:sahaara/chat/presentation/notifier/get_sahaara_endpoint_notifier.dart';
 import 'package:sahaara/chat/presentation/screens/chat_screen.dart';
 import 'package:sahaara/global/color_scheme.dart';
@@ -30,14 +30,14 @@ class _PackageAnimateState extends ConsumerState<PackageAnimate> {
   void initState() {
     super.initState();
     ref.read(getSahaaraEndpointNotifier.notifier).getSaharaEndpoint();
-    if (FirebaseAuth.instance.currentUser != null) {
-      isUserOnboarded(ref, uid: FirebaseAuth.instance.currentUser!.uid)
-          .then((_) async {
-        await Future.delayed(17000.ms);
-        Navigator.of(context).pushAndRemoveUntil(
-            Transition(child: MyHomePage(title: 'title')), (route) => false);
-      });
-    }
+    // if (FirebaseAuth.instance.currentUser != null) {
+    //   isUserOnboarded(ref, uid: FirebaseAuth.instance.currentUser!.uid)
+    //       .then((_) async {
+    //     await Future.delayed(17000.ms);
+    //     Navigator.of(context).pushAndRemoveUntil(
+    //         Transition(child: MyHomePage(title: 'title')), (route) => false);
+    //   });
+    // }
   }
 
   @override
@@ -420,7 +420,7 @@ class _PackageAnimateState extends ConsumerState<PackageAnimate> {
                 onPressed: () {
                   Navigator.of(context).push(
                     Transition(
-                      child: const GoogleSignInPage(),
+                      child: const AppwriteSignInPage(),
                       transitionEffect: TransitionEffect.RIGHT_TO_LEFT,
                     ),
                   );
@@ -466,7 +466,7 @@ class _PackageAnimateState extends ConsumerState<PackageAnimate> {
               onPressed: () {
                 Navigator.of(context).push(
                   Transition(
-                    child: const GoogleSignInPage(
+                    child: const AppwriteSignInPage(
                       isSignIn: true,
                     ),
                     transitionEffect: TransitionEffect.RIGHT_TO_LEFT,

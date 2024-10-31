@@ -1,10 +1,9 @@
-import 'dart:ui';
-
+import 'dart:ui'; 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sahaara/auth/presentation/screen/google_sign_in_page.dart';
+import 'package:sahaara/auth/presentation/screen/appwrite_login_page.dart';
 import 'package:sahaara/chat/presentation/screens/call_chat_screen.dart';
 import 'package:sahaara/chat/presentation/screens/chat_screen.dart';
 import 'package:sahaara/firebase_options.dart';
@@ -25,7 +24,6 @@ Client client = Client();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   client.setProject('67235e43000669db1bca');
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
   runApp(const MyApp());
 }
 
